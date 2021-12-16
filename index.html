@@ -1,68 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Web site created using CloudBase Webify">
-    <title>Hello Webify！</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        code {
-            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-                monospace;
-        }
-        .App {
-            text-align: center;
-        }
+    <head>
+        <meta charset="utf-8" />
+        <title>SSL数字证书,通配符证书,文档签名,代码签名购买-Certum</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="湖南赛云信息科技有限公司是一家专注于网络安全的企业，公司以Certum品牌为依托。主要业务有ssl证书、ssl证书购买、ssl数字证书、代码签名证书、通配符证书、网站加密、http加密等。欢迎咨询。" />
+        <meta name="keywords" content="SSL证书,免费SSL,SSL证书购买,SSL证书申请,SSL数字证书,Certum" />
+        <meta name="author" content="Certum" />
+        <meta name="email" content="support@certum.cn" />
+        <meta name="website" content="https://www.certum.cn" />
+        <meta name="Version" content="v1.0.1" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Icons -->
+        <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+        <!-- Slider -->
+        <link rel="stylesheet" href="css/tiny-slider.css"/>
+        <!-- Main Css -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="css/colors/skyblue.css" rel="stylesheet" id="color-opt">
 
-        .App-logo {
-            height: 40vmin;
-            pointer-events: none;
-        }
+    </head>
 
-        @media (prefers-reduced-motion: no-preference) {
-            .App-logo {
-                animation: App-logo-spin infinite 20s linear;
-            }
-        }
+    <body>
+        <!-- Loader -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader -->
+        
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo container-->
+                <a class="logo" href="https://www.certum.cn/">
+                    <img src="images/home/certum.svg" height="70" class="logo-light-mode" alt="">
+                    <img src="images/home/certum.svg" height="70" class="logo-dark-mode" alt="">
+                </a>                
+                <!-- Logo End -->
 
-        .App-header {
-            background-color: #efefef;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: calc(10px + 2vmin);
-            color: black;
-        }
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
 
-        .App-link {
-            color: #108ee9;
-        }
-    </style>
-</head>
+                <!--Login button Start-->
+                <ul class="buy-button list-inline mb-0">
+                    <li class="list-inline-item mb-0">
+                        <a href="javascript:void(0)" target="_blank">
+                            <div class="btn btn-icon btn-pills btn-soft-primary"><i data-feather="user" class="fea icon-sm"></i></div>
+                        </a>
+                    </li>
+                    
+                    <li class="list-inline-item ps-1 mb-0">
+                        <a href="javascript:void(0)" target="_blank">
+                            <div class="btn btn-icon btn-pills btn-primary"><i data-feather="shopping-cart" class="fea icon-sm"></i></div>
+                        </a>
+                    </li>
+                </ul>
+                <!--Login button End-->
+        
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu">
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">SSL证书</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="index-landing-one.html" class="sub-menu-item">Landing One </a></li>
+                                        <li><a href="index-landing-two.html" class="sub-menu-item">Landing Two </a></li>
+                                        <li><a href="index-landing-three.html" class="sub-menu-item">Landing Three </a></li>
+                                        <li><a href="index-landing-four.html" class="sub-menu-item">Landing Four</a></li>
+                                        <li><a href="index-personal.html" class="sub-menu-item">Personal</a></li>
+                                        <li><a href="index-freelancer.html" class="sub-menu-item">Freelance </a></li>
+                                        <li><a href="index-event.html" class="sub-menu-item">Event</a></li>
+                                        <li><a href="index-ebook.html" class="sub-menu-item">E-Book</a></li>
+                                        <li><a href="index-onepage.html" class="sub-menu-item">Saas <span class="badge bg-warning ms-2">Onepage</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
 
-<body>
-    <div id="root">
-        <div class="App">
-            <header class="App-header">
-                <img src="https://main.qcloudimg.com/raw/2f3b21706c37e8685efe5c60b26ceb24.png" class="App-logo" alt="logo">
-                <p>Welcome to Webify！</p>
-                <a class="App-link" href="https://webify.cloudbase.net/"
-                    target="_blank" rel="noopener noreferrer">webify.cloudbase.net</a>
-            </header>
+                        <li class="parent-parent-menu-item">
+                            <a href="aboutus.html">关于我们</a><span class="menu-arrow"></span>
+                        </li>
+
+                        <li class="parent-menu-item">
+                            <a href="contact.html">联系我们</a><span class="menu-arrow"></span>
+                        </li>
+                        <li class="parent-menu-item">
+                            <a href="javascript:void(0)">支持文档</a><span class="menu-arrow"></span>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+
+		
+        <!-- Hero Start -->
+        <section class="bg-half-170 d-table w-100">
+            <div class="container">
+                <div class="row mt-5 align-items-center">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="title-heading me-lg-4">
+                            <h3 class="heading mb-3">使用SSL证书保护您的<span class="text-primary">网站</span> </h3>
+                            <p class="para-desc text-muted">信任就是一切，加密可使网络更安全。HTTPS 网络连接可保护您的信息免遭窥探者、中间人和试图假冒可信网站的黑客的攻击。实施适当的加密、身份认证和安全网站可以看到和感觉自己受到了保护。当消费者认为您的服务安全时，他们就会信任您的品牌。值得信赖的品牌始终会赢得胜利。我们致力于为所有用户打造更安全的网络环境。</p>
+                            <div class="mt-4">
+                                <a href="#" class="btn btn-primary mt-2 me-2"><i class="uil uil-lock"></i> 购买证书</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                        <img src="images/illustrator/Startup_SVG.svg" alt="">
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- Hero End -->
+
+        <!-- Faq Start -->
+        <section class="bg-light">
+            <div class="container bg-light">
+                <div class="row" id="counter">
+                    <div class="col-md-3 col-6 mt-4 pt-2">
+                        <div class="counter-box text-center">
+                            <img src="images/home/ic1-1.svg" class="avatar avatar-small" alt="">
+                            <p><h6 class="counter-head text-muted">Certum服务遍布全球</h6></p>
+                        </div><!--end counter box-->
+                    </div>
+
+                    <div class="col-md-2 col-6 mt-4 pt-2">
+                        <div class="counter-box text-center">
+                            <img src="images/home/ic5-1.svg" class="avatar-small" alt="">
+							
+                            <p><h6 class="counter-head text-muted">的经验</h6></p>
+                        </div><!--end counter box-->
+                    </div>
+
+                    <div class="col-md-2 col-6 mt-4 pt-2">
+                        <div class="counter-box text-center">
+                            <img src="images/home/World-icon-1.svg" class="avatar avatar-small" alt="">
+                            <p><h6 class="counter-head text-muted">欧洲最大的认证机构</h6></p>
+                        </div><!--end counter box-->
+                    </div>
+
+                    <div class="col-md-2 col-6 mt-4 pt-2">
+                        <div class="counter-box text-center">
+                            <img src="images/home/ic3-1.svg" class="avatar-small" alt="">
+                            <p><h6 class="counter-head text-muted">技术基础设施位于欧盟</h6></p>
+                        </div><!--end counter box-->
+                    </div>
+					
+                    <div class="col-md-2 col-6 mt-4 pt-2">
+                        <div class="counter-box text-center">
+                            <img src="images/home/ic4-1.svg" class="avatar-small" alt="">
+							
+                            <p><h6 class="counter-head text-muted">服务正常运行时间</h6></p>
+                        </div><!--end counter box-->
+                    </div>
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- Faq End -->
+
+        <!-- Price Start -->
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-12 mt-4 pt-2 text-center">
+                        <ul class="nav nav-pills nav-justified flex-column flex-sm-row rounded" data-aos="fade-up" data-aos-duration="1200" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link rounded active" id="community-tab" data-bs-toggle="pill" href="#pills-community" role="tab" aria-controls="pills-community" aria-selected="false">
+                                    <div class="text-center py-2">
+                                        <h6 class="mb-0">域名验证 SSL 证书</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item">
+                                <a class="nav-link rounded" id="selfservice-tab" data-bs-toggle="pill" href="#pills-self" role="tab" aria-controls="pills-self" aria-selected="false">
+                                    <div class="text-center py-2">
+                                        <h6 class="mb-0">组织验证 SSL 证书</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                        </ul><!--end nav pills-->
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12 mt-4 pt-2">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-community" role="tabpanel" aria-labelledby="community-tab">
+                                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card pricing-rates business-rate border-0 p-4 rounded-md shadow">
+                            <div class="card-body p-0">
+                                <span class="py-2 px-4 d-inline-block bg-soft-primary h6 mb-0 text-primary rounded-lg">Certum DV SSL 单域名证书</span>
+                                <h2 class="fw-bold mb-0 mt-3">￥19.00</h2>
+                                <p class="text-muted">年/起</p>
+
+                                <p class="text-muted">验证域名控制权，即可快速签发证书，支持同时保护单条域名。</p>
+
+                                <ul class="list-unstyled pt-3 border-top">
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>验证域名控制权</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>提供基础的 HTTPS 加密防护</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护小程序服务器</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护微信公众号服务器</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护个人主页、论坛、博客网站</li>
+                                </ul>
+
+                                <div class="mt-4">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary">立即购买</button>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0">*支持一个域名</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card pricing-rates business-rate border-0 p-4 rounded-md shadow">
+                            <div class="ribbon ribbon-right ribbon-warning overflow-hidden"><span class="text-center d-block shadow small h6">Best</span></div>
+                            <div class="card-body p-0">
+                                <span class="py-2 px-4 d-inline-block bg-soft-primary h6 mb-0 text-primary rounded-lg">Certum DV SSL 通配符证书</span>
+                                <h2 class="fw-bold mb-0 mt-3">￥199.00</h2>
+                                <p class="text-muted">年/起</p>
+
+                                <p class="text-muted">验证域名控制权，即可快速签发证书，保护单个顶级域名的同时可保护该域名的所有二级子域名，子域名数量不受限制。</p>
+
+                                <ul class="list-unstyled pt-3 border-top">
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>验证域名控制权</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>提供基础的 HTTPS 加密防护</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护小程序服务器</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护微信公众号服务器</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护个人主页、论坛、博客网站</li>
+                                </ul>
+                                <div class="mt-4">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary">立即购买</button>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0">*支持无限二级域名</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+						<div class="col-lg-4 col-md-6 mt-4 pt-2">
+							<div class="card pricing-rates business-rate border-0 p-4 rounded-md shadow">
+								<div class="card-body p-0">
+									<span class="py-2 px-4 d-inline-block bg-soft-primary h6 mb-0 text-primary rounded-lg">Certum DV SSL 多域名证书</span>
+									<h2 class="fw-bold mb-0 mt-3">￥45.00</h2>
+									<p class="text-muted">年/起</p>
+
+									<p class="text-muted">验证域名控制权，1-3分钟快速签发证书，可同时为多条域名同时提供保护，单本证书可保护高达1000条域名。</p>
+
+                                <ul class="list-unstyled pt-3 border-top">
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>验证域名控制权</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>提供基础的 HTTPS 加密防护</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护小程序服务器</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护微信公众号服务器</li>
+                                    <li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护个人主页、论坛、博客网站</li>
+                                </ul>
+
+									<div class="mt-4">
+										<div class="d-grid">
+											<button class="btn btn-primary">立即购买</button>
+										</div>
+										<p class="text-muted mt-3 mb-0">*支持多个域名</p>
+									</div>
+								</div>
+							</div>
+						</div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end teb pane-->
+                            
+					<div class="tab-pane fade" id="pills-self" role="tabpanel" aria-labelledby="selfservice-tab">
+						<div class="row align-items-center">
+					<div class="col-lg-4 col-md-6 mt-4 pt-2">
+						<div class="card pricing-rates business-rate border-0 p-4 rounded-md shadow">
+							<div class="card-body p-0">
+								<span class="py-2 px-4 d-inline-block bg-soft-primary h6 mb-0 text-primary rounded-lg">Certum  OV SSL 单域名证书</span>
+								<h2 class="fw-bold mb-0 mt-3">Y400.00</h2>
+								<p class="text-muted">年/起</p>
+
+								<p class="text-muted">验证域名控制权、企业资质信息，1-2工作日快速签发证书，支持同时保护单条域名。</p>
+
+								<ul class="list-unstyled pt-3 border-top">
+									<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>验证域名控制权、企业执照</li>
+									<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护 API 服务器</li>
+									<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护企业邮件服务器</li>
+									<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护办公VPN、OA、CRM、ERP系统</li>
+									<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护公司和单位网站</li>
+								</ul>
+
+								<div class="mt-4">
+									<div class="d-grid">
+										<button class="btn btn-primary">立即购买</button>
+									</div>
+									<p class="text-muted mt-3 mb-0">*支持一个域名</p>
+								</div>
+							</div>
+						</div>
+					</div><!--end col-->
+                    
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card pricing-rates business-rate border-0 p-4 rounded-md shadow">
+                            <div class="ribbon ribbon-right ribbon-warning overflow-hidden"><span class="text-center d-block shadow small h6">Best</span></div>
+                            <div class="card-body p-0">
+                                <span class="py-2 px-4 d-inline-block bg-soft-primary h6 mb-0 text-primary rounded-lg">Certum OV SSL 通配符证书</span>
+                                <h2 class="fw-bold mb-0 mt-3">￥1899.00</h2>
+                                <p class="text-muted">年/起</p>
+
+                                <p class="text-muted">验证域名控制权、组织信息，即可快速签发证书，保护单个顶级域名的同时可保护该域名的所有二级子域名，子域名数量不受限制。</p>
+
+                                <ul class="list-unstyled pt-3 border-top">
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>验证域名控制权、企业执照</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护 API 服务器</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护企业邮件服务器</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护办公VPN、OA、CRM、ERP系统</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护公司和单位网站</li>
+                                </ul>
+
+                                <div class="mt-4">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary">立即购买</button>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0">*支持无限二级域名</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card pricing-rates business-rate border-0 p-4 rounded-md shadow">
+                            <div class="card-body p-0">
+                                <span class="py-2 px-4 d-inline-block bg-soft-primary h6 mb-0 text-primary rounded-lg">Certum OV SSL 多域名证书</span>
+                                <h2 class="fw-bold mb-0 mt-3">￥899.00</h2>
+                                <p class="text-muted">年/起</p>
+
+                                <p class="text-muted">验证域名控制权、组织信息，1-3分钟快速签发证书，可同时为多条域名同时提供保护，单本证书可保护高达1000条域名。</p>
+
+                                <ul class="list-unstyled pt-3 border-top">
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>验证域名控制权、企业执照</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护 API 服务器</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护企业邮件服务器</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护办公VPN、OA、CRM、ERP系统</li>
+													<li class="h6 text-muted mb-0"><span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>保护公司和单位网站</li>
+                                </ul>
+
+                                <div class="mt-4">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary">立即购买</button>
+                                    </div>
+                                    <p class="text-muted mt-3 mb-0">*支持多个域名</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                        </div><!--end tab content-->
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+		
+<!-- 新加内容开始 -->
+
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h6 class="text-primary">Certum的优势</h6>
+                            <h4 class="title mb-4">为什么选择我们</h4>
+                            <!--<p class="text-muted para-desc mb-0 mx-auto">Span <span class="text-primary fw-bold">Certum</span> connect.</p>-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card features feature-clean explore-feature p-4 px-md-3 border-0 rounded-md shadow text-center">
+                            <div class="icons text-primary text-center mx-auto">
+                                <i class="uil uil-lock-access d-block rounded h1 mb-0"></i>
+                            </div>
+
+                            <div class="card-body p-0 content">
+                                <h5 class="mt-4"><a href="javascript:void(0)" class="title text-dark">全站加密解决方案</a></h5>
+                                <p class="text-muted">HTTPS全站加密，使网站速度更快，提升网站搜索引擎排名，防止流量劫持，让iOS和安卓客户端接口安全访问。</p>
+
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card features feature-clean explore-feature p-4 px-md-3 border-0 rounded-md shadow text-center">
+                            <div class="icons text-primary text-center mx-auto">
+                                <i class="uil uil-keyhole-square-full d-block rounded h1 mb-0"></i>
+                            </div>
+
+                            <div class="card-body p-0 content">
+                                <h5 class="mt-4"><a href="javascript:void(0)" class="title text-dark">MPKI 证书管理</a></h5>
+                                <p class="text-muted">MPKI证书生命周期管理系统，降低管理数字证书成本和复杂度，证书申请、颁发、下载、更新，一键完成。</p>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card features feature-clean explore-feature p-4 px-md-3 border-0 rounded-md shadow text-center">
+                            <div class="icons text-primary text-center mx-auto">
+                                <i class="uil uil-lock-alt d-block rounded h1 mb-0"></i>
+                            </div>
+
+                            <div class="card-body p-0 content">
+                                <h5 class="mt-4"><a href="javascript:void(0)" class="title text-dark">Apple ATS 方案</a></h5>
+                                <p class="text-muted">正确快捷的通过Apple ATS强制安全要求，提供配置检测、部署指导、服务稳定性监控等一站式解决方法。</p>
+
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card features feature-clean explore-feature p-4 px-md-3 border-0 rounded-md shadow text-center">
+                            <div class="icons text-primary text-center mx-auto">
+                                <i class="uil uil-award d-block rounded h1 mb-0"></i>
+                            </div>
+
+                            <div class="card-body p-0 content">
+                                <h5 class="mt-4"><a href="javascript:void(0)" class="title text-dark">全设备认可的证书</a></h5>
+                                <p class="text-muted">我们签发的数字证书可在所有流行的移动设备、桌面、物联网设备中受到信任，包含常用的各类操作系统和平台固件兼容。</p>
+
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="container mt-100 mt-60">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6">
+                        <img src="images/landing/1.jpg" class="img-fluid rounded-md shadow-lg" alt="">
+                    </div><!--end col-->
+
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+
+<!-- 新加内容结束 -->
+        <div class="position-relative">
+            <div class="shape overflow-hidden text-light">
+                <svg viewBox="0 0 2880 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M720 125L2160 0H2880V250H0V125H720Z" fill="currentColor"></path>
+                </svg>
+            </div>
         </div>
-    </div>
-</body>
+        <!-- End Services -->
+		
 
+
+        <!-- Footer Start -->
+        <footer class="footer">    
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-py-60">
+                            <div class="row">
+                                <div class="col-lg-auto col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                                    <a href="#" class="logo-footer">
+                                        <img src="images/home/logoft.svg" height="99" alt="">
+                                    </a>
+                                    <p class="mt-4">
+
+                                    </p>
+                                    <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+                                    </ul><!--end icon-->
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">SSL证书</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 单域名证书</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 多域名证书</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 通配符证书</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 单域名证书</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 多域名证书</a></li>
+										<li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 通配符证书</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">关于我们</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="aboutus.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 关于我们</a></li>
+                                        <li><a href="contact.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 联系我们</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
+                                        <li><a href="terms.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 服务条款</a></li>
+                                        <li><a href="privacy.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                                <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">证书管理</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="aboutus.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 关于我们</a></li>
+                                        <li><a href="contact.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 联系我们</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
+                                        <li><a href="terms.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 服务条款</a></li>
+                                        <li><a href="privacy.html" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="footer-py-30 footer-bar">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col-sm-4">
+                            <div class="text-sm-start">
+                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> All rights reserved to <a href="https://www.certum.cn/" target="_blank" class="text-reset">Certum</a>.</p>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-sm-4 col-md-4 col-sm-4 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <ul class="list-unstyled footer-list terms-service mb-0">
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot me-2">Privacy</a></li>
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot me-2">Terms</a></li>
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot me-2">FAQs</a></li>
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot">Contact</a></li>
+                            </ul>
+                        </div><!--end col-->
+
+                        <div class="col-sm-4 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <ul class="list-unstyled text-sm-end mb-0">
+                                <li class="list-inline-item"><a href="javascript:void(0)"><img src="images/payments/american-ex.png" class="avatar avatar-ex-sm" title="American Express" alt=""></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><img src="images/payments/discover.png" class="avatar avatar-ex-sm" title="Discover" alt=""></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><img src="images/payments/master-card.png" class="avatar avatar-ex-sm" title="Master Card" alt=""></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><img src="images/payments/paypal.png" class="avatar avatar-ex-sm" title="Paypal" alt=""></a></li>
+                                <li class="list-inline-item"><a href="javascript:void(0)"><img src="images/payments/visa.png" class="avatar avatar-ex-sm" title="Visa" alt=""></a></li>
+                            </ul>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+
+        <!-- Cookies Start -->
+        <!--<div class="cookie-popup bg-white shadow rounded py-3 px-4">
+            <p class="text-muted mb-0">This website uses cookies to provide you with a great user experience. By using it, you accept our <a href="https://shreethemes.in" target="_blank" class="text-success h6">use of cookies</a></p>
+            <div class="cookie-popup-actions text-end">
+                <button><i class="uil uil-times text-dark fs-4"></i></button>
+            </div>
+        </div><!--Note: Cookies Js including in plugins.init.js (path like; js/plugins.init.js) and Cookies css including in _helper.scss (path like; scss/_helper.scss)-->
+        <!-- Cookies End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+        <!-- Back to top -->
+        <!-- javascript -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- SLIDER -->
+        <script src="js/tiny-slider.js "></script>
+        <!-- Icons -->
+        <script src="js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+        <script src="js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+    </body>
 </html>

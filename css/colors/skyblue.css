@@ -39,7 +39,7 @@
 .tns-controls button[data-controls="prev"]:hover, 
 .tns-controls button[data-controls="next"]:hover,
 .back-to-top {
-    background-color: #00a3e0 !important;
+    background-color: #32c2ec !important;
 }
 
 .text-primary,
@@ -101,7 +101,7 @@
 .accordion .accordion-button:not(.collapsed),
 .accordion .accordion-item .accordion-button:before,
 #navmenu-nav li.active a {
-    color: #00a3e0 !important;
+    color: #32c2ec !important;
 }
 
 .btn-primary,
@@ -139,7 +139,7 @@
 .container-filter li.active, .container-filter li:hover,
 .blockquote-wrapper .blockquote,
 .blockquote-wrapper .blockquote:after {
-    border-color: #00a3e0 !important;
+    border-color: #32c2ec !important;
 }
 
 .bg-soft-primary,
@@ -197,7 +197,7 @@
 }
 
 .social-icon li a:hover .fea-social {
-    fill: #00a3e0;
+    fill: #32c2ec;
 }
 
 .bg-circle-gradiant {

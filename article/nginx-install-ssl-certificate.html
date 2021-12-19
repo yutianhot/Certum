@@ -12,17 +12,17 @@
         <meta name="website" content="https://www.certum.cn" />
         <meta name="Version" content="v1.0.1" />
         <!-- favicon -->
-        <link rel="shortcut icon" href="../images/favicon.ico">
+        <link rel="shortcut icon" href="//www.certum.cn/images/favicon.ico">
         <!-- Bootstrap -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="//www.certum.cn/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- Icons -->
-        <link href="../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="../css/line.css">
+        <link href="//www.certum.cn/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="//www.certum.cn/css/line.css">
         <!-- Slider -->
-        <link rel="stylesheet" href="../css/tiny-slider.css"/>
+        <link rel="stylesheet" href="//www.certum.cn/css/tiny-slider.css"/>
         <!-- Main Css -->
-        <link href="../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
-        <link href="../css/colors/skyblue.css" rel="stylesheet" id="color-opt">
+        <link href="//www.certum.cn/css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="//www.certum.cn/css/colors/skyblue.css" rel="stylesheet" id="color-opt">
 
     </head>
 
@@ -43,8 +43,8 @@
             <div class="container">
                 <!-- Logo container-->
                 <a class="logo" href="https://www.certum.cn/">
-                    <img src="../images/home/certum.svg" height="70" class="logo-light-mode" alt="">
-                    <img src="../images/home/certum.svg" height="70" class="logo-dark-mode" alt="">
+                    <img src="//www.certum.cn/images/home/certum.svg" height="70" class="logo-light-mode" alt="">
+                    <img src="//www.certum.cn/images/home/certum.svg" height="70" class="logo-dark-mode" alt="">
                 </a>                
                 <!-- Logo End -->
 
@@ -65,10 +65,10 @@
 
                 <!--Login button Start-->
                 <ul class="buy-button list-inline mb-0">
-                    <li class="list-inline-item"><a href="#" >  登录  </a></li>
+                    <li class="list-inline-item"><a href="//www.certum.cn/#" >  登录  </a></li>
                     <li class="list-inline-item"></li>
                     <li class="list-inline-item"></li>
-                    <li class="list-inline-item"><a href="#" >  注册  </a></li>
+                    <li class="list-inline-item"><a href="//www.certum.cn/#" >  注册  </a></li>
                 </ul>
                 <!--Login button End-->
         
@@ -80,22 +80,22 @@
                             <ul class="submenu">
                                 <li>
                                     <ul>
-                                        <li><a href="commercial-ssl-certificate" class="sub-menu-item">COMMERCIAL DV 域名证书 </a></li>
-                                        <li><a href="trusted-ssl-certificate" class="sub-menu-item">TRUSTED OV 域名证书 </a></li>
+                                        <li><a href="//www.certum.cn/commercial-ssl-certificate" class="sub-menu-item">COMMERCIAL DV 域名证书 </a></li>
+                                        <li><a href="//www.certum.cn/trusted-ssl-certificate" class="sub-menu-item">TRUSTED OV 域名证书 </a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
 
                         <li class="parent-parent-menu-item">
-                            <a href="aboutus">关于我们</a><span class="menu-arrow"></span>
+                            <a href="//www.certum.cn/aboutus">关于我们</a><span class="menu-arrow"></span>
                         </li>
 
                         <li class="parent-menu-item">
-                            <a href="contact">联系我们</a><span class="menu-arrow"></span>
+                            <a href="//www.certum.cn/contact">联系我们</a><span class="menu-arrow"></span>
                         </li>
                         <li class="parent-menu-item">
-                            <a href="faqs">支持文档</a><span class="menu-arrow"></span>
+                            <a href="//www.certum.cn/faqs">支持文档</a><span class="menu-arrow"></span>
 
                                     </ul>
                                 </li>
@@ -108,7 +108,7 @@
         <!-- Navbar End -->
 
         <!-- Hero Start -->
-        <section class="bg-half-170 d-table w-100" style="background: url('../images/1.jpg') center center;">
+        <section class="bg-half-170 d-table w-100" style="background: url('//www.certum.cn/images/1.jpg') center center;">
             <div class="bg-overlay"></div>
             <div class="container">
                 <div class="row mt-5 justify-content-center">
@@ -123,7 +123,7 @@
                     <nav aria-label="breadcrumb" class="d-inline-block">
                         <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
                             <li class="breadcrumb-item"><a href="//www.certum.cn">Certum</a></li>
-                            <li class="breadcrumb-item"><a href="faqs">支持文档</a></li>
+                            <li class="breadcrumb-item"><a href="//www.certum.cn/faqs">支持文档</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Nginx安装SSL证书</li>
                         </ul>
                     </nav>
@@ -157,8 +157,8 @@ server
 listen 80;
 listen 443 ssl;
 ssl on;
-ssl_certificate /usr/local/nginx/conf/ssl/digital_sign_com_cn_doamin.pem;
-ssl_certificate_key /usr/local/nginx/conf/ssl/digital_sign_com_cn_doamin.key;
+ssl_certificate /usr/local/nginx/conf/ssl/certum_cn.pem;
+ssl_certificate_key /usr/local/nginx/conf/ssl/certum_cn.key;
 ssl_session_timeout 5m;
 ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 ssl_prefer_server_ciphers on;
@@ -166,7 +166,7 @@ ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AE
 ssl_session_cache builtin:1000 shared:SSL:10m;
 server_name www.x2ssl.com v2ssl.com;
 index index.html index.htm index.php default.html default.htm default.php;
-root /home/wwwroot/vhost/digital-sign.com.cn_doamin.root/;
+root /home/wwwroot/vhost/certum_cn.root/;
 location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ {
 expires 30d;
 }
@@ -205,7 +205,7 @@ access_log off;
                             <div class="row">
                                 <div class="col-lg-auto col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                                     <a href="#" class="logo-footer">
-                                        <img src="../images/home/logoft.svg" height="99" alt="">
+                                        <img src="//www.certum.cn/images/home/logoft.svg" height="99" alt="">
                                     </a>
                                     <p class="mt-4">
 
@@ -221,31 +221,31 @@ access_log off;
                                 <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                                     <h5 class="footer-head">SSL证书</h5>
                                     <ul class="list-unstyled footer-list mt-4">
-                                        <li><a href="commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 单域名证书</a></li>
-                                        <li><a href="commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 多域名证书</a></li>
-                                        <li><a href="commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 通配符证书</a></li>
-                                        <li><a href="trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 单域名证书</a></li>
-                                        <li><a href="trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 多域名证书</a></li>
-                                        <li><a href="trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 通配符证书</a></li>
+                                        <li><a href="//www.certum.cn/commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 单域名证书</a></li>
+                                        <li><a href="//www.certum.cn/commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 多域名证书</a></li>
+                                        <li><a href="//www.certum.cn/commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 通配符证书</a></li>
+                                        <li><a href="//www.certum.cn/trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 单域名证书</a></li>
+                                        <li><a href="//www.certum.cn/trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 多域名证书</a></li>
+                                        <li><a href="//www.certum.cn/trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 通配符证书</a></li>
                                     </ul>
                                 </div><!--end col-->
                                 
                                 <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                                     <h5 class="footer-head">系统服务</h5>
                                     <ul class="list-unstyled footer-list mt-4">
-                                        <li><a href="#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书管理</a></li>
-                                        <li><a href="#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书工具</a></li>
-                                        <li><a href="#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书分析</a></li>
-                                        <li><a href="#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书监控</a></li>                                    </ul>
+                                        <li><a href="//www.certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书管理</a></li>
+                                        <li><a href="//www.certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书工具</a></li>
+                                        <li><a href="//www.certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书分析</a></li>
+                                        <li><a href="//www.certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书监控</a></li>                                    </ul>
                                 </div><!--end col-->
                                 <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                                     <h5 class="footer-head">关于我们</h5>
                                     <ul class="list-unstyled footer-list mt-4">
-                                        <li><a href="aboutus" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 关于我们</a></li>
-                                        <li><a href="contact" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 联系我们</a></li>
-                                        <li><a href="faqs" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
-                                        <li><a href="terms" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 服务条款</a></li>
-                                        <li><a href="privacy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
+                                        <li><a href="//www.certum.cn/aboutus" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 关于我们</a></li>
+                                        <li><a href="//www.certum.cn/contact" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 联系我们</a></li>
+                                        <li><a href="//www.certum.cn/faqs" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
+                                        <li><a href="//www.certum.cn/terms" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 服务条款</a></li>
+                                        <li><a href="//www.certum.cn/privacy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
                                     </ul>
                                 </div><!--end col-->
                             </div><!--end row-->
@@ -265,7 +265,7 @@ access_log off;
 
                         <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                             <ul class="list-unstyled text-sm-end mb-0">
-                                <li class="list-inline-item"><img src="../images/certum_pl_ev.svg" class="avatar" style="max-height: 64px;" title="Certum" alt=""></li>
+                                <li class="list-inline-item"><img src="//www.certum.cn/images/certum_pl_ev.svg" class="avatar" style="max-height: 64px;" title="Certum" alt=""></li>
                             </ul>
                         </div><!--end col-->
                     </div><!--end row-->
@@ -278,15 +278,15 @@ access_log off;
         <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
         <!-- Back to top -->
         <!-- javascript -->
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="//www.certum.cn/js/bootstrap.bundle.min.js"></script>
         <!-- SLIDER -->
-        <script src="../js/tiny-slider.js "></script>
+        <script src="//www.certum.cn/js/tiny-slider.js "></script>
         <!-- Icons -->
-        <script src="../js/feather.min.js"></script>
+        <script src="//www.certum.cn/js/feather.min.js"></script>
         <!-- Switcher -->
-        <script src="../js/switcher.js"></script>
+        <script src="//www.certum.cn/js/switcher.js"></script>
         <!-- Main Js -->
-        <script src="../js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
-        <script src="../js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+        <script src="//www.certum.cn/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+        <script src="//www.certum.cn/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
     </body>
 </html>

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: 
+Disallow: /bin/
+Sitemap: http://certum.cn/sitemap.xml
+Sitemap: http://certum.cn/sitemap.html
+Sitemap: http://certum.cn/sitemap.txt

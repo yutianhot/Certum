@@ -40,8 +40,11 @@
             <div class="container">
                 <!-- Logo container-->
                 <a class="logo" href="https://certum.cn/">
-                    <img src="images/home/certum.svg" height="70" class="logo-light-mode" alt="">
-                    <img src="images/home/certum.svg" height="70" class="logo-dark-mode" alt="">
+                    <span class="logo-light-mode">
+                    <img src="//certum.cn/images/home/certum_dark.svg" height="70" class="l-dark" alt="">
+                    <img src="//certum.cn/images/home/certum_light.svg" height="70" class="l-light" alt="">
+                    </span>
+                    <img src="//certum.cn/images/home/certum_light.svg" height="70" class="logo-dark-mode" alt="">
                 </a>                
                 <!-- Logo End -->
 
@@ -59,13 +62,21 @@
                         <!-- End mobile menu toggle-->
                     </div>
                 </div>
-
                 <!--Login button Start-->
                 <ul class="buy-button list-inline mb-0">
-                    <li class="list-inline-item"><a href="//app.certum.cn/login" traget="_blank" >  登录  </a></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"><a href="//app.certum.cn/register" traget="_blank" >  注册  </a></li>
+                    <li class="list-inline-item mb-0">
+                        <a href="https://app.certum.cn/login" target="_blank">
+                            <div class="login-btn-primary">登录</div>
+                            <div class="login-btn-light text-white">登录</div>
+                        </a>
+                    </li>
+                    
+                    <li class="list-inline-item ps-1 mb-0">
+                        <a href="https://app.certum.cn/register" target="_blank">
+                            <div class="login-btn-primary">注册</div>
+                            <div class="login-btn-light text-white">注册</div>
+                        </a>
+                    </li>
                 </ul>
                 <!--Login button End-->
         

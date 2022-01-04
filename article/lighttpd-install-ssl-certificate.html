@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Lighttpd 配置 SSL - Certum</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="湖南赛云信息科技有限公司是Certum亚太区官方唯一安全技术专家战略合作伙伴，公司以Certum品牌为依托。主要业务有ssl证书、ssl证书购买、ssl数字证书、代码签名证书、通配符证书、网站加密、http加密等。欢迎咨询。" />
+        <meta name="keywords" content="SSL证书,免费SSL,SSL证书购买,SSL证书申请,SSL数字证书,Certum" />
+        <meta name="author" content="Certum" />
+        <meta name="email" content="support@certum.cn" />
+        <meta name="website" content="https://certum.cn" />
+        <meta name="Version" content="v1.0.1" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="//certum.cn/images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="//certum.cn/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- Icons -->
+        <link href="//certum.cn/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="//certum.cn/css/line.css">
+        <!-- Main Css -->
+        <link href="//certum.cn/css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="//certum.cn/css/colors/skyblue.css" rel="stylesheet" id="color-opt">    </head>
+    <body>
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+
+        <!-- Navbar STart -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo container-->
+                <a class="logo" href="https://certum.cn/">
+                    <span class="logo-light-mode">
+                    <img src="//certum.cn/images/home/certum_dark.svg" height="70" class="l-dark" alt="">
+                    <img src="//certum.cn/images/home/certum_light.svg" height="70" class="l-light" alt="">
+                    </span>
+                    <img src="//certum.cn/images/home/certum_light.svg" height="70" class="logo-dark-mode" alt="">
+                </a>                
+                <!-- Logo End -->
+
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+                <!--Login button Start-->
+                <ul class="buy-button list-inline mb-0">
+                    <li class="list-inline-item mb-0">
+                        <a href="https://app.certum.cn/login" target="_blank">
+                            <div class="login-btn-primary">登录</div>
+                            <div class="login-btn-light text-white">登录</div>
+                        </a>
+                    </li>
+                    
+                    <li class="list-inline-item ps-1 mb-0">
+                        <a href="https://app.certum.cn/register" target="_blank">
+                            <div class="login-btn-primary">注册</div>
+                            <div class="login-btn-light text-white">注册</div>
+                        </a>
+                    </li>
+                </ul>
+                <!--Login button End-->
+        
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu">
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">SSL证书</a><span class="menu-arrow"></span>
+                            <ul class="submenu bg-white">
+                                <li>
+                                    <ul>
+                                        <li><a href="//certum.cn/commercial-ssl-certificate" class="sub-menu-item">COMMERCIAL DV 域名证书 </a></li>
+                                        <li><a href="//certum.cn/trusted-ssl-certificate" class="sub-menu-item">TRUSTED OV 域名证书 </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="parent-parent-menu-item">
+                            <a href="//certum.cn/aboutus">关于我们</a><span class="menu-arrow"></span>
+                        </li>
+
+                        <li class="parent-menu-item">
+                            <a href="//certum.cn/contact">联系我们</a><span class="menu-arrow"></span>
+                        </li>
+                        <li class="parent-menu-item">
+                            <a href="//certum.cn/help">支持文档</a><span class="menu-arrow"></span>
+                        </li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+
+        <!-- Hero Start -->
+        <section class="bg-half-170 d-table w-100" style="background: url('//certum.cn/images/1.jpg') center center;">
+            <div class="bg-overlay bg-gradient-primary opacity-9"></div>
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-lg-12 text-center">
+                        <div class="pages-heading">
+                            <h3 class="title text-white title-dark mb-0"> Lighttpd 配置 SSL </h3>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+                
+                <div class="position-breadcrumb">
+                    <nav aria-label="breadcrumb" class="d-inline-block">
+                        <ul class="breadcrumb bg-white rounded shadow mb-0 px-4 py-2">
+                            <li class="breadcrumb-item"><a href="//certum.cn">Certum</a></li>
+                            <li class="breadcrumb-item"><a href="//certum.cn/help">支持文档</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Lighttpd 配置 SSL</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div> <!--end container-->
+        </section><!--end section-->
+        <!-- Hero End -->
+        
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">本文档指导您在 lighttpd 1.4.x HTTP 服务器上安装并配置 SSL 证书，关于 lighttpd 1.4.x 在各个平台上的安装不再涉及。<br style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">由于近年 OpenSSL 高危漏洞不断，因此强烈推荐您在开始配置之前首先升级 OpenSSL 到最新版本</p>
+                                <h2 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1.714rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">配置 SSL 证书</h2>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">完整的 SSL 证书分为四个部分：</p>
+                                <ol style="box-sizing: border-box; margin-bottom: 1rem; margin-top: 0px; max-width: 100%; color: rgb(51, 51, 51); font-family: Quicksand, sans-serif; font-size: 19.2px;">
+                                    <li style="box-sizing: border-box;">CA 根证书 (root CA)</li>
+                                    <li style="box-sizing: border-box;">中级证书 (Intermediate Certificate)</li>
+                                    <li style="box-sizing: border-box;">域名证书</li>
+                                    <li style="box-sizing: border-box;">证书密钥 (仅由您持有)</li>
+                                </ol>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">以 COMODO 证书为例，您将收到四份文件：</p>
+                                <ul style="box-sizing: inherit; margin: 0px 0px 10px; max-width: 100%; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">根证书 - AddTrustExternalCARoot.crt</li>
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">中级证书 - COMODORSAAddTrustCA.crt</li>
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">中级证书 - COMODORSADomainValidationSecureServerCA.crt</li>
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">您的域名证书 - example_com.crt</li>
+                                </ul>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">您要依照 中间证书 -&gt; 根证书 的顺序串联为证书链，才能被绝大多数浏览器信任。使用&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">cat</code>&nbsp;命令串联中间证书、根证书：</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs nginx" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-title" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(62, 153, 159);">cat</span> COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt &gt; ca-root.bundle.crt
+                            </code></pre>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">然后将证书密钥&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">example_com.key</code>&nbsp;和域名证书&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">example_com.crt</code>&nbsp;合并</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs nginx" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-title" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(62, 153, 159);">cat</span>  example_com.key example_com.crt &gt; example_com.pem
+                            </code></pre>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">得到&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">root.bundle.crt</code>&nbsp;和&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">example_com.pem</code>&nbsp;后，将两者上传至服务器并保存在安全的位置，例如&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">/etc/ssl/private</code>&nbsp;目录下 (没有此目录请创建)。</p>
+                                <h2 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1.714rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">修改 lighttpd 站点配置</h2>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">下面是&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">lighttpd.conf</code>&nbsp;文件中关于 SSL 的部分配置</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs bash" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-variable" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(200, 40, 41);">$SERVER</span>[<span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"socket"</span>] == <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">":443"</span> {
+                                 ssl.engine = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"enable"</span>
+                                 ssl.pemfile = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"/etc/ssl/private/example_com.bundle.pem"</span>
+                                 ssl.ca-file = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"/etc/ssl/private/ca-root.bundle.crt"</span>
+                                 server.name = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"example.com"</span>
+                                 server.document-root = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"/var/www"</span>
+                            }
+                            </code></pre>
+                                <h2 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1.714rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">强制定向到 HTTPS</h2>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">下面是&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">lighttpd.conf</code>&nbsp;文件中关于强制 HTTP 定向到 HTTPS 的部分配置</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs perl" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-variable" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(200, 40, 41);">$HTTP</span>[<span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"scheme"</span>] == <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"http"</span> {
+                                <span class="hljs-comment" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(142, 144, 140);"># capture vhost name with regex conditiona -&gt; %0 in redirect pattern</span>
+                                <span class="hljs-comment" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(142, 144, 140);"># must be the most inner block to the redirect rule</span>
+                                <span class="hljs-variable" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(200, 40, 41);">$HTTP</span>[<span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"host"</span>] =~ <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">".*"</span> {
+                                    url.redirect = (<span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">".*"</span> =&gt; <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"https://<span class="hljs-variable" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(200, 40, 41);">%0</span><span class="hljs-variable" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(200, 40, 41);">$0</span>"</span>)
+                                }
+                            }
+                            </code></pre>
+                                <h2 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1.714rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">Lighttpd 安全配置</h2>
+                                <h5 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">禁用 SSL Compression (抵御 CRIME 攻击)</h5>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs perl" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;">ssl.<span class="hljs-keyword" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(137, 89, 168);">use</span>-compression = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"disable"</span>
+                            </code></pre>
+                                <h5 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">禁用 SSLv2 及 SSLv3</h5>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs perl" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;">ssl.<span class="hljs-keyword" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(137, 89, 168);">use</span>-sslv2 = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"disable"</span>
+                            ssl.<span class="hljs-keyword" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(137, 89, 168);">use</span>-sslv3 = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"disable"</span>
+                            </code></pre>
+                                <h5 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">抵御 Poodle 和 SSL downgrade 攻击</h5>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">您需要支持&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">TLS-FALLBACK-SCSV</code>&nbsp;以自动开启此功能。下列 OpenSSL 版本包含对&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">TLS-FALLBACK-SCSV</code>&nbsp;的支持，Lighttpd 会自动启用此特性。</p>
+                                <ul style="box-sizing: inherit; margin: 0px 0px 10px; max-width: 100%; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">OpenSSL&nbsp;<span style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-weight: bold;">1.0.1</span>&nbsp;在&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">1.0.1j</code>&nbsp;及之后的版本中支持</li>
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">OpenSSL&nbsp;<span style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-weight: bold;">1.0.0</span>&nbsp;在&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">1.0.0o</code>&nbsp;及之后的版本中支持</li>
+                                    <li style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility;">OpenSSL&nbsp;<span style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-weight: bold;">0.9.8</span>&nbsp;在&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">0.9.8zc</code>&nbsp;及之后的版本中支持</li>
+                                </ul>
+                                <h5 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">加密及交换算法</h5>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">一份推荐的配置：</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs cpp" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;">ssl.cipher-<span class="hljs-built_in" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(245, 135, 31);">list</span> = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"EECDH+AESGCM:EDH+AESGCM:AES128+EECDH:AES128+EDH"</span>
+                            </code></pre>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">如果您需要兼容一些老式系统和浏览器 (例如 Windows XP 和 IE6)，请使用下面的：</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs cpp" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;">ssl.cipher-<span class="hljs-built_in" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(245, 135, 31);">list</span> = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"EECDH+AESGCM:EDH+AESGCM:ECDHE-RSA-AES128-GCM-SHA256:AES256+EECDH:AES256+EDH:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"</span>
+                            </code></pre>
+                                <h5 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">配置 Forward Secrecy 和 DHE 参数</h5>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">生成强 DHE 参数：</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs bash" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-built_in" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(245, 135, 31);">cd</span> /etc/ssl/certs
+                            openssl dhparam -out dhparam.pem <span class="hljs-number" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(245, 135, 31);">4096</span>
+                            </code></pre>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;"><span style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-weight: bold;">建议您使用性能强劲的平台生成此文件</span>，例如最新版的至强物理机。如果您只有一台小型 VPS，请使用&nbsp;<code style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(199, 37, 78); overflow-wrap: break-word; margin: 0px; padding: 2px 4px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; background-color: rgb(245, 245, 245); border-radius: 2px;">openssl dhparam -out dhparam.pem 2048</code>&nbsp;命令生成 2048bit 的参数文件。</p>
+                                <p style="box-sizing: inherit; margin: 0px 0px 1em; font-size: 19.2px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif;">添加到 SSL 配置文件：</p>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs apache" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-keyword" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(137, 89, 168);">ssl</span>.dh-file = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"/etc/ssl/certs/dhparam.pem"</span>
+                            <span class="hljs-keyword" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(137, 89, 168);">ssl</span>.ec-curve = <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"secp384r1"</span>
+                            </code></pre>
+                                <h5 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">启用 HSTS</h5>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs php" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;">server.modules += ( <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"mod_setenv"</span> )
+                            <span class="hljs-variable" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(200, 40, 41);">$HTTP</span>[<span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"scheme"</span>] == <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"https"</span> {
+                                setenv.add-response-header  = ( <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"Strict-Transport-Security"</span> =&gt; <span class="hljs-string" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(113, 140, 0);">"max-age=63072000; includeSubdomains; preload"</span>)
+                            }
+                            </code></pre>
+                                <h2 style="box-sizing: inherit; margin: calc(2rem - 0.14285em) 0px 1rem; font-weight: 500; line-height: 1.2857em; font-size: 1.714rem; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; font-family: Lato, &quot;Helvetica Neue&quot;, Roboto, &quot;Open Sans&quot;, &quot;Noto Sans&quot;, &quot;Source Han Sans SC&quot;, &quot;WenQuanYi Microhei&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft Yahei&quot;, &quot;Droid Sans Fallback&quot;, sans-serif; color: rgba(0, 0, 0, 0.87);">重启 Lighttpd</h2>
+                                <pre style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; margin-top: 0px; margin-bottom: 10px; overflow: auto; color: rgba(0, 0, 0, 0.87); padding: 8px; line-height: 1.42857; word-break: break-all; background-color: rgb(245, 245, 245); border: 1px solid rgb(212, 212, 213); border-radius: 0.285714rem; list-style: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; max-width: 100%;"><code class="hljs nginx" style="box-sizing: inherit; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; color: rgb(77, 77, 76); overflow-wrap: break-word; word-break: normal; margin: 0px; padding: 0.5em; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; border-radius: 2px; background-repeat: initial; display: block; overflow-x: auto; text-size-adjust: none;"><span class="hljs-title" style="box-sizing: inherit; margin: 0px; padding: 0px; list-style: none; border: none; -webkit-font-smoothing: antialiased; text-rendering: optimizelegibility; color: rgb(62, 153, 159);">sudo</span> service lighttpd restart</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <!-- Footer Start -->
+        <footer class="footer">    
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-py-60">
+                            <div class="row">
+                                <div class="col-lg-auto col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                                    <a href="#" class="logo-footer">
+                                        <img src="//certum.cn/images/home/logoft.svg" height="99" alt="">
+                                    </a>
+                                    <p class="mt-3"><i data-feather="phone" class="fea icon-sm"></i>  0731-85818443</p>
+                                    <p class="mt-3"><i data-feather="map-pin" class="fea icon-sm"></i>  长沙市雨花区万家丽中路中庭国际1613</p>
+                                    <p class="mt-3"><i data-feather="clock" class="fea icon-sm"></i>  早9点 – 晚12点</p>
+                                    <p class="mt-3"><i data-feather="mail" class="fea icon-sm"></i>  support@certum.cn</p>
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">SSL证书</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="//certum.cn/commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 单域名证书</a></li>
+                                        <li><a href="//certum.cn/commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 多域名证书</a></li>
+                                        <li><a href="//certum.cn/commercial-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> COMMERCIAL DV 通配符证书</a></li>
+                                        <li><a href="//certum.cn/trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 单域名证书</a></li>
+                                        <li><a href="//certum.cn/trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 多域名证书</a></li>
+                                        <li><a href="//certum.cn/trusted-ssl-certificate" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> TRUSTED OV 通配符证书</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                                
+                                <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">系统服务</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="//app.certum.cn/certificates/orders" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书管理</a></li>
+                                        <li><a href="//app.certum.cn/certhub/tools/" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书工具</a></li>
+                                        <li><a href="//app.certum.cn/certhub/discovery/dashboard" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 发现证书</a></li>
+                                        <li><a href="//app.certum.cn/certhub/report/new" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书审计</a></li>
+                                        <li><a href="//app.certum.cn/certhub/discovery/log" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书日志</a></li>
+                                        <li><a href="//app.certum.cn/certhub/tools/convert-cert" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 格式转换</a></li> 
+                                    </ul>
+                                </div><!--end col-->
+                                <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                                    <h5 class="footer-head">关于我们</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="//certum.cn/aboutus" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 关于我们</a></li>
+                                        <li><a href="//certum.cn/contact" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 联系我们</a></li>
+                                        <li><a href="//certum.cn/help" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
+                                        <li><a href="//certum.cn/terms" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 服务条款</a></li>
+                                        <li><a href="//certum.cn/privacy-policy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
+                                        <li><a href="//certum.cn/member-aggreement" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 注册协议</a></li>
+                                        <li><a href="//certum.cn/refund-policy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 退款政策</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="footer-py-30 footer-bar">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <div class="text-sm-start">
+                                <p class="mb-0">版权所有 © 2017-<script>document.write(new Date().getFullYear())</script> 湖南赛云信息科技有限公司。保留所有权利</p>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                            <ul class="list-unstyled text-sm-end mb-0">
+                                <li class="list-inline-item"><img src="//certum.cn/images/certum_pl_ev.svg" class="avatar" style="max-height: 64px;" title="Certum" alt=""></li>
+                            </ul>
+                        </div><!--end col-->
+                        <div class="col-sm-6 align-items-left text-white-30">
+                            <div class="text-sm-start">
+                                <p class="mb-0" style="font-size:6px;color:#767d8e;font-weight: 400;">统一社会信用代码:91430104MA4LXYDRX0。ICP证: <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#767d8e"><span>湘ICP备18014565号-7</span></a></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        </div><!--end col-->
+                        </div>
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+        <!-- Back to top -->
+        <!-- javascript -->
+        <script src="//certum.cn/js/bootstrap.bundle.min.js"></script>
+        <!-- SLIDER -->
+        <script src="//certum.cn/js/tiny-slider.js "></script>
+        <!-- Icons -->
+        <script src="//certum.cn/js/feather.min.js"></script>
+        <!-- Main Js -->
+        <script src="//certum.cn/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+        <script src="//certum.cn/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+        <!-- Chat Start -->
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0cdc8f17-256f-4832-ab84-8dab638c6bf6";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+        <!-- End -->
+        <!-- Statistics Start-->
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?56cc4d68e68ad2dc9a8da561dcb596fa";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        <!-- End -->
+    </body>
+</html>

@@ -32,14 +32,17 @@
             </div>
         </div>
         <!-- Loader -->
-        
+
         <!-- Navbar STart -->
         <header id="topnav" class="defaultscroll sticky">
             <div class="container">
                 <!-- Logo container-->
                 <a class="logo" href="https://certum.cn/">
-                    <img src="//certum.cn/images/home/certum.svg" height="70" class="logo-light-mode" alt="">
-                    <img src="//certum.cn/images/home/certum.svg" height="70" class="logo-dark-mode" alt="">
+                    <span class="logo-light-mode">
+                    <img src="//certum.cn/images/home/certum_dark.svg" height="70" class="l-dark" alt="">
+                    <img src="//certum.cn/images/home/certum_light.svg" height="70" class="l-light" alt="">
+                    </span>
+                    <img src="//certum.cn/images/home/certum_light.svg" height="70" class="logo-dark-mode" alt="">
                 </a>                
                 <!-- Logo End -->
 
@@ -57,13 +60,21 @@
                         <!-- End mobile menu toggle-->
                     </div>
                 </div>
-
                 <!--Login button Start-->
                 <ul class="buy-button list-inline mb-0">
-                    <li class="list-inline-item"><a href="//certum.cn/#" >  登录  </a></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"><a href="//certum.cn/#" >  注册  </a></li>
+                    <li class="list-inline-item mb-0">
+                        <a href="https://app.certum.cn/login" target="_blank">
+                            <div class="login-btn-primary">登录</div>
+                            <div class="login-btn-light text-white">登录</div>
+                        </a>
+                    </li>
+                    
+                    <li class="list-inline-item ps-1 mb-0">
+                        <a href="https://app.certum.cn/register" target="_blank">
+                            <div class="login-btn-primary">注册</div>
+                            <div class="login-btn-light text-white">注册</div>
+                        </a>
+                    </li>
                 </ul>
                 <!--Login button End-->
         
@@ -71,8 +82,8 @@
                     <!-- Navigation Menu-->   
                     <ul class="navigation-menu">
                         <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)" >SSL证书</a><span class="menu-arrow"></span>
-                            <ul class="submenu">
+                            <a href="javascript:void(0)">SSL证书</a><span class="menu-arrow"></span>
+                            <ul class="submenu bg-white">
                                 <li>
                                     <ul>
                                         <li><a href="//certum.cn/commercial-ssl-certificate" class="sub-menu-item">COMMERCIAL DV 域名证书 </a></li>
@@ -90,17 +101,16 @@
                             <a href="//certum.cn/contact">联系我们</a><span class="menu-arrow"></span>
                         </li>
                         <li class="parent-menu-item">
-                            <a href="//certum.cn/faqs">支持文档</a><span class="menu-arrow"></span>
+                            <a href="//certum.cn/help">支持文档</a><span class="menu-arrow"></span>
                         </li>
                     </ul><!--end navigation menu-->
                 </div><!--end navigation-->
             </div><!--end container-->
         </header><!--end header-->
-        <!-- Navbar End -->
 
         <!-- Hero Start -->
         <section class="bg-half-170 d-table w-100" style="background: url('//certum.cn/images/1.jpg') center center;">
-            <div class="bg-overlay"></div>
+            <div class="bg-overlay bg-gradient-primary opacity-9"></div>
             <div class="container">
                 <div class="row mt-5 justify-content-center">
                     <div class="col-lg-12 text-center">
@@ -198,15 +208,10 @@ access_log off;
                                     <a href="#" class="logo-footer">
                                         <img src="//certum.cn/images/home/logoft.svg" height="99" alt="">
                                     </a>
-                                    <p class="mt-4">
-
-                                    </p>
-                                    <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
-                                        <li class="list-inline-item"><a href="#" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
-                                    </ul><!--end icon-->
+                                    <p class="mt-3"><i data-feather="phone" class="fea icon-sm"></i>  0731-85818443</p>
+                                    <p class="mt-3"><i data-feather="map-pin" class="fea icon-sm"></i>  长沙市雨花区万家丽中路中庭国际1613</p>
+                                    <p class="mt-3"><i data-feather="clock" class="fea icon-sm"></i>  早9点 – 晚12点</p>
+                                    <p class="mt-3"><i data-feather="mail" class="fea icon-sm"></i>  support@certum.cn</p>
                                 </div><!--end col-->
                                 
                                 <div class="col-lg-4 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
@@ -224,19 +229,24 @@ access_log off;
                                 <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                                     <h5 class="footer-head">系统服务</h5>
                                     <ul class="list-unstyled footer-list mt-4">
-                                        <li><a href="//certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书管理</a></li>
-                                        <li><a href="//certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书工具</a></li>
-                                        <li><a href="//certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书分析</a></li>
-                                        <li><a href="//certum.cn/#" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书监控</a></li>                                    </ul>
+                                        <li><a href="//app.certum.cn/certificates/orders" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书管理</a></li>
+                                        <li><a href="//app.certum.cn/certhub/tools/" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书工具</a></li>
+                                        <li><a href="//app.certum.cn/certhub/discovery/dashboard" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 发现证书</a></li>
+                                        <li><a href="//app.certum.cn/certhub/report/new" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书审计</a></li>
+                                        <li><a href="//app.certum.cn/certhub/discovery/log" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 证书日志</a></li>
+                                        <li><a href="//app.certum.cn/certhub/tools/convert-cert" traget="_blank" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 格式转换</a></li> 
+                                    </ul>
                                 </div><!--end col-->
                                 <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                                     <h5 class="footer-head">关于我们</h5>
                                     <ul class="list-unstyled footer-list mt-4">
                                         <li><a href="//certum.cn/aboutus" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 关于我们</a></li>
                                         <li><a href="//certum.cn/contact" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 联系我们</a></li>
-                                        <li><a href="//certum.cn/faqs" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
+                                        <li><a href="//certum.cn/help" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 支持文档</a></li>
                                         <li><a href="//certum.cn/terms" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 服务条款</a></li>
-                                        <li><a href="//certum.cn/privacy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
+                                        <li><a href="//certum.cn/privacy-policy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 隐私政策</a></li>
+                                        <li><a href="//certum.cn/member-aggreement" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 注册协议</a></li>
+                                        <li><a href="//certum.cn/refund-policy" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> 退款政策</a></li>
                                     </ul>
                                 </div><!--end col-->
                             </div><!--end row-->
@@ -250,7 +260,7 @@ access_log off;
                     <div class="row align-items-center">
                         <div class="col-sm-6">
                             <div class="text-sm-start">
-                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> All rights reserved to <a href="https://certum.cn/" target="_blank" class="text-reset">Certum</a>.</p>
+                                <p class="mb-0">版权所有 © 2017-<script>document.write(new Date().getFullYear())</script> 湖南赛云信息科技有限公司。保留所有权利</p>
                             </div>
                         </div><!--end col-->
 
@@ -259,6 +269,14 @@ access_log off;
                                 <li class="list-inline-item"><img src="//certum.cn/images/certum_pl_ev.svg" class="avatar" style="max-height: 64px;" title="Certum" alt=""></li>
                             </ul>
                         </div><!--end col-->
+                        <div class="col-sm-6 align-items-left text-white-30">
+                            <div class="text-sm-start">
+                                <p class="mb-0" style="font-size:6px;color:#767d8e;font-weight: 400;">统一社会信用代码:91430104MA4LXYDRX0。ICP证: <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#767d8e"><span>湘ICP备18014565号-7</span></a></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        </div><!--end col-->
+                        </div>
                     </div><!--end row-->
                 </div><!--end container-->
             </div>
@@ -290,5 +308,6 @@ access_log off;
           s.parentNode.insertBefore(hm, s);
         })();
         </script>
+        <!-- End -->
     </body>
 </html>
